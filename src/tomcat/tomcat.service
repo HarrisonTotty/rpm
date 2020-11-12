@@ -1,0 +1,18 @@
+[Unit]
+Description=Apache Tomcat
+After=syslog.target network.target
+
+[Service]
+EnvironmentFile=/www/tomcat/base/current/conf/tomcat.conf
+
+ExecStart=/www/tomcat/base/current/bin/catalina.sh run
+ExecStop=/www/tomcat/base/current/bin/catalina.sh stop
+SuccessExitStatus=143
+
+User=tomcat
+Group=tomcat
+
+SyslogIdentifier=tomcat
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+# .dockerignore file
+# ------------------
+
+.git
+*.log
+/build
+/src
